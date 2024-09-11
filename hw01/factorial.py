@@ -6,7 +6,7 @@ def pactorial(n:int) -> int:
     return total
 
 def main():
-    n = int(input("양의 정수입력: "))
+    n = int(input("정수입력: "))
 
     answer = pactorial(n)
 
