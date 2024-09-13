@@ -1,9 +1,6 @@
 import tkinter as tk
-
-def f2c(temp: float) -> float:
-    return (temp - 32) * 5 / 9 
-def c2f(temp: float) -> float:
-    return (temp + 32) * 9 / 5
+from def_source import f2c
+from def_source import c2f
 
 def f2c_encoding():
     try:
