@@ -5,7 +5,7 @@ def f2c(temp):
     return (temp - 32) * 5 / 9 
 
 def c2f(temp):
-    return (temp + 32) * 9 / 5
+    return (temp * 9 / 5) + 32
 
 def is_prime(n):
     if n < 2:
