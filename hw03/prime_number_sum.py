@@ -12,7 +12,7 @@ def encoding():
     try:
         num = int(ent_input.get())
         encoding = prime_sum(num)
-        encoding_str = ",".join(map(str, encoding)) #괄호 없이 표현하기 위해서 문자열로 변경함
+        encoding_str = ", ".join(map(str, encoding)) #괄호 없이 표현하기 위해서 문자열로 변경함
         lbl_result["text"] = f"0부터 {num}까지의 모든 소수들은 {encoding_str}입니다"
         
     except ValueError:
