@@ -67,7 +67,6 @@ $("#results").html(data);
 """
     return html_str
 
-
 @app.route("/c2f/")
 def c2f_html():
      temp = request.args.get("temp", "0")
@@ -75,7 +74,7 @@ def c2f_html():
          c2f = (int(temp) * 9 / 5) + 32
          return f"{temp}℃ => {c2f:.2f}℉"
      except ValueError:
-         return "숫자를 입력하세요"
+         return "숫자를 입력하세요."
 
 @app.route("/f2c/")
 def f2c_arg_html():
@@ -84,7 +83,6 @@ def f2c_arg_html():
          f2c = (int(temp) - 32) * 5 / 9
          return f"{temp}℉ => {f2c:.2f}℃"
      except ValueError:
-         return "숫자를 입력하세요"
-
-    
+         return "숫자를 입력하세요."
+   
 app.run(debug=True)
