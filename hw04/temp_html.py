@@ -39,7 +39,7 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 function post_c2f() {
 $.ajax({
 type: "GET",
-url: "/c2f", //,  상대경로 사용
+url: "/c2f",
 data: $("#c2f_form").serialize(), 
 success: update_result,
 dataType: "html"
@@ -50,7 +50,7 @@ dataType: "html"
 function post_f2c() {
 $.ajax({
 type: "GET",
-url: "/f2c", //,  상대경로 사용
+url: "/f2c",
 data: $("#f2c_form").serialize(), 
 success: update_result,
 dataType: "html"
