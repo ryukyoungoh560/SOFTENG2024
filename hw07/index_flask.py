@@ -29,12 +29,12 @@ posts = [
 def index():
     return render_template('index.html', posts=posts)
 
-@app.route('/about_me')
+@app.route('/about')
 def about_me():
-    return render_template('about_me.html', title = 'About')
+    return render_template('about.html', title = 'About')
 
-@app.route('/blog_list')
+@app.route('/blog')
 def blog_list():
-    return render_template('blog_list.html')
+    return render_template('blog.html')
 
 app.run(debug=True)
