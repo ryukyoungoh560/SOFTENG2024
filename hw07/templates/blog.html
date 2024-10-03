@@ -1,8 +1,15 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-<div>
-  <h1>blog</h1>
-</div>
+<h1><strong>Blog</strong></h1>
+<section>
+  
+  <p>저는 파이썬에 대해 공부하고 있습니다.</p>
+  <p>2024년 1학기에 파이게임으로 게임을 만들었습니다.</p>
+
+  <a href="https://github.com/ryukyoungoh560/pygame-starwars">게임 보기</a>
+  <hr>
+  <img src="{{url_for('static', filename = 'images/pygame_image.jpg')}}" height="400px">
+  </section>
 {% endblock %}
 
