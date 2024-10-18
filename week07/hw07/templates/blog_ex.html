@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1><strong>Blog</strong></h1>
+
+
+{% if posts|length > 0 %}
+{% else %}
+{% endif %}
+
+{% for post in posts %}
+{% endfor %}
