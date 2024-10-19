@@ -1,11 +1,10 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-<div>
-  <h1><strong>About me</strong></h1>
-</div>
+
+<h1><strong>About me</strong></h1>
 <section>
-  <h4>Team560</h4>
+  <h3>Team560</h3>
   <p>안녕하십니까 저는 21학번 오류경입니다.</p>
 
   <div>
@@ -15,5 +14,5 @@
   <a href="{{ url_for('index') }}">첫 화면으로 가기</a>
   <hr>
   <img src="{{ url_for('static', filename='images/smartfarm_image.jpg') }}" height="300px">
-  </section>
+</section>
 {% endblock %}
