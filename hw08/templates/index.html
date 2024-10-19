@@ -1,8 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-<h1><strong>Post</strong></h1>
-
+<h1><strong>Post</strong></i></h1>
 <section>
     {% if posts|length > 0 %}
         {% for post in posts %}
@@ -15,12 +14,21 @@
     {% endif %}
 
     <div>
-        <button onclick="whatTimeIsIt()" class = "card2">현재시간</button> 
+        <i class="fas fa-clock"></i>
+        <button onclick="whatTimeIsIt()" class = "card2">현재시간</button>     
     </div>
 
     <hr>
 
     <p>아래 링크는 저의 github페이지입니다.</p>
-    <a href="https://github.com/ryukyoungoh560/SOFTENG2024">github으로 이동</a>
+    
+    <div>
+        <i class="fab fa-github"></i>
+        <a href="https://github.com/ryukyoungoh560/SOFTENG2024">github으로 이동</a>
+    </div>
+    
+    
 </section>
 {% endblock %}
+
+</i>
