@@ -19,7 +19,7 @@ def index():
     return render_template('index.html', title = 'Post', posts=post_list)
 
 @app.route('/about')
-def about():
+def about_me():
     return render_template('about.html', title = 'About')
 
 @app.route('/blog')
