@@ -2,6 +2,7 @@ import tkinter as tk
 from def_source import f2c
 from def_source import c2f
 
+
 def f2c_encoding():
     try:
         temp = int(ent_input.get())
@@ -9,7 +10,7 @@ def f2c_encoding():
         lbl_result["text"] = f"섭씨: {encoding:.1f}℃"
     except ValueError:
         lbl_result["text"] = f"정수를 입력하세요"
-    
+
 
 def c2f_encoding():
     try:
@@ -18,6 +19,7 @@ def c2f_encoding():
         lbl_result["text"] = f"화씨: {encoding:.1f}℉"
     except ValueError:
         lbl_result["text"] = f"정수를 입력하세요"
+
 
 window = tk.Tk()
 window.title("온도단위 변환")
@@ -31,17 +33,9 @@ ent_input.grid(row=0, column=0, sticky="e")
 lbl_input.grid(row=0, column=1, sticky="w")
 
 
-btn_convert = tk.Button(
-    master=window,
-    text="F2C",
-    command=f2c_encoding
-)
+btn_convert = tk.Button(master=window, text="F2C", command=f2c_encoding)
 
-btn_convert_2 = tk.Button(
-    master=window,
-    text="C2F",
-    command=c2f_encoding
-)
+btn_convert_2 = tk.Button(master=window, text="C2F", command=c2f_encoding)
 
 
 lbl_result = tk.Label(master=window, text="전환온도")

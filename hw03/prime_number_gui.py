@@ -1,6 +1,7 @@
 import tkinter as tk
 from def_source import is_prime
 
+
 def encoding():
     try:
         num = int(ent_input.get())
@@ -9,11 +10,10 @@ def encoding():
             lbl_result["text"] = f"이 수는 소수입니다"
         else:
             lbl_result["text"] = f"이 수는 소수가 아닙니다"
-        
+
     except ValueError:
         lbl_result["text"] = f"정수를 입력해주세요"
 
-    
 
 window = tk.Tk()
 window.title("소수")
@@ -26,11 +26,7 @@ lbl_input = tk.Label(master=frm_entry, text="정수입력")
 ent_input.grid(row=0, column=0, sticky="e")
 lbl_input.grid(row=0, column=1, sticky="w")
 
-btn_convert = tk.Button(
-    master = window,
-    text = "SUBMIT",
-    command = encoding
-)
+btn_convert = tk.Button(master=window, text="SUBMIT", command=encoding)
 
 lbl_result = tk.Label(master=window, text="")
 

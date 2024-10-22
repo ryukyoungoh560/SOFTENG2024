@@ -8,7 +8,8 @@ def main():
     if is_even(n) == True:
         print(f"숫자 {n}은 짝수입니다.")
     else:
-        print(f"숫자 {n}은 홀수입니다.") 
+        print(f"숫자 {n}은 홀수입니다.")
+
 
 if __name__ == "__main__":
     main()

@@ -2,6 +2,7 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def hello():
     html_str = """ 
@@ -67,22 +68,25 @@ $("#results").html(data);
 """
     return html_str
 
+
 @app.route("/c2f/")
 def c2f_html():
-     temp = request.args.get("temp", "0")
-     try:
-         c2f = (int(temp) * 9 / 5) + 32
-         return f"{temp}℃ => {c2f:.2f}℉"
-     except ValueError:
-         return "숫자를 입력하세요."
+    temp = request.args.get("temp", "0")
+    try:
+        c2f = (int(temp) * 9 / 5) + 32
+        return f"{temp}℃ => {c2f:.2f}℉"
+    except ValueError:
+        return "숫자를 입력하세요."
+
 
 @app.route("/f2c/")
 def f2c_arg_html():
-     temp = request.args.get("temp", "0")
-     try:
-         f2c = (int(temp) - 32) * 5 / 9
-         return f"{temp}℉ => {f2c:.2f}℃"
-     except ValueError:
-         return "숫자를 입력하세요."
-   
+    temp = request.args.get("temp", "0")
+    try:
+        f2c = (int(temp) - 32) * 5 / 9
+        return f"{temp}℉ => {f2c:.2f}℃"
+    except ValueError:
+        return "숫자를 입력하세요."
+
+
 app.run(debug=True)
