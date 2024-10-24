@@ -1,0 +1,32 @@
+{% extends './layout.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1><strong>Blog</strong></h1>
+
+<section>
+  {% if posts|length > 0 %}
+        {% for post in posts %}
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.content }}</p>
+            <p>작성자:{{ post.author }}</p>
+        {% endfor %}
+    {% else %}
+        <p>게시물이 없습니다.</p>
+    {% endif %}
+
+  <hr>
+  <p>저는 파이썬에 대해 공부하고 있습니다.</p>
+  <p>2024년 1학기에 파이게임으로 게임을 만들었습니다.</p>
+
+  <div>
+  <i class="fas fa-gamepad"></i>
+  <a href="https://github.com/ryukyoungoh560/pygame-starwars">게임 보기</a>
+  </div>
+  
+  <hr>
+  <img src="{% static 'single_pages/images/pygame_image.jpg'}" width="600px">
+</section>
+{% endblock %}
+
