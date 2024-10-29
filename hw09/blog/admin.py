@@ -1,4 +1,4 @@
 from django.contrib import admin
 from .models import Post
 # Register your models here.
-admin.site.resister(Post)
+admin.site.register(Post)
