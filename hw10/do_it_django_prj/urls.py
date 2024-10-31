@@ -19,6 +19,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('blog/', include('blog.urls')) blog빼고 single_pages로만 구현 ,
+    path('blog/', include('blog.urls', namespace='blog')) ,
     path('', include('single_pages.urls')),
 ]
