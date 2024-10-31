@@ -1,12 +1,12 @@
 from django.shortcuts import render
-import os
-import pandas as pd
-from django.conf import settings
+from .models import Post
 
 def blog_list(request):
-    csv_path = os.path.join(settings.BASE_DIR, "blog", "static", "blog", "csv", "data.csv")
+    posts = Post.objects.all().order_by('-pk')
 
-    df = pd.read_csv(csv_path)
-    post_list = df.to_dict(orient="records")
+    return render(request, 'blog/blog.html', {'title':'Blog list', 'posts': posts})
 
-    return render(request, 'blog/blog.html', {'title':'Blog list', 'posts': post_list})
+def single_post_page(request, pk):
+    post = Post.objects.get(pk=pk)
+
+    return render(request, 'blog/single_post_page.html', {'title':'single_post_page', 'post': post})
