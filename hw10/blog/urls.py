@@ -4,6 +4,6 @@ from . import views
 app_name = "blog"
 
 urlpatterns = [
-    path('blog/', views.blog_list, name='blog_list'),
+    path('', views.blog_list, name='blog_list'),
 ]
 
