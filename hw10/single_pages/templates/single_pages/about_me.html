@@ -1,0 +1,26 @@
+{% extends './layout.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1><strong>About me</strong></h1>
+<section>
+  <h3>Team560</h3>
+  <p>안녕하십니까 저는 21학번 오류경입니다.</p>
+
+  <div>
+    <i class="fas fa-clock"></i>
+    <button onclick="whatTimeIsIt()" class = "card2">현재시간</button>
+  </div>
+
+  <hr>
+
+  <div>
+    <i class="fas fa-home"></i>
+    <a href="{% url 'single_pages:landing_page' %}">첫 화면으로 가기</a>
+  </div>
+
+  <hr>
+  <img src="{% static 'single_pages/images/smartfarm_image.jpg' %}" width="600px">
+</section>
+{% endblock %}
