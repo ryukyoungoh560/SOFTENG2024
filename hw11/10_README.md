@@ -1,7 +1,11 @@
 # hw09
 
-- single_pages로 구현했던 blog.html을 blog라는 폴더를 만들어서 구현
+ step2부터 start todo project 따로 해도 되고 hw11안에 만들어도됨
 
-- blog폴더의 urls.py에서 app name을 지정해서 충돌을 방지하고 layout.html에서 경로를 html파일별로 구별해서 지정함
+path("todo", include("todo_app.urls"))
 
-- blog에서 제목부분을 통해 세부페이지로 이동할 수 있도록 구현함
+ToDoList - 포스트
+
+ToDoItem - 댓글
+
+홈페이지 디자인에 head부분등에 녹여서 구현할 수 있음

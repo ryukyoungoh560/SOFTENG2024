@@ -1,5 +1,8 @@
 from django.shortcuts import render
+from django.views.generic import ListView
 from .models import Post
+
+
 
 def blog_list(request):
     posts = Post.objects.all().order_by('-pk')
