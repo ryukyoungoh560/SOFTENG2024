@@ -3,6 +3,9 @@
 {% block content %}
 
 <h1><strong>Blog</strong></h1>
+<div>
+  <a href="{% url 'todo_app:index' %}">Go to To-Do List</a>
+</div>
 
 <section>
   {% for p in post_list %}

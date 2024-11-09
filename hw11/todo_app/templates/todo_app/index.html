@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<!--index.html-->
+
 {% if object_list %}
 <h3>All my lists</h3>
 {% endif %}
@@ -9,7 +9,7 @@
     <li>
         <div
             role="button"
-            onclick="location.href='{% url "list" todolist.id %}'">
+            onclick="location.href='{% url 'todo_app: list' todolist.id %}'">
             {{ todolist.title }}
         </div>
     </li>
