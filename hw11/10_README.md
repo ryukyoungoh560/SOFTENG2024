@@ -1,13 +1,8 @@
-# hw09
+# hw11
 
- step2부터 start todo project 따로 해도 되고 hw11안에 만들어도됨
+11번 과제 - todo_app 설치
 
-path("todo", include("todo_app.urls"))
+onclick 을 써서 구현하려 했지만 오류를 고칠 수 없어서 기존에 썻던 방식과 비슷한 하이퍼링크에 버튼을 넣는 형식으로 구현함
+이것으로 이전과 같은 방법을 쓰기 위해 app_name을 지정하고 관련된 코드를 수정했음
 
-ToDoList - 포스트
 
-ToDoItem - 댓글
-
-홈페이지 디자인에 head부분등에 녹여서 구현할 수 있음
-
-onclick 부분을 인식하지 못하는 문제발생

@@ -11,12 +11,11 @@
             <input
                 value="Save"
                 type="submit">
-            <input
-                value="Cancel"
-                type="button"
-                onclick="location.href='{% url "index" %}';">
         </form>
     </div>
+    <a href="{% url 'todo:index' %}">
+        <button type="button">Cancel</button>
+    </a>
 </div>
 
 {% endblock %}

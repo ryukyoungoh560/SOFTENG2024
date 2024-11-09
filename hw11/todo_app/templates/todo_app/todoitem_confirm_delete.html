@@ -12,10 +12,10 @@
     <input
         value="Yes, delete."
         type="submit">
-    <input
-        value="Cancel"
-        type="button"
-        onclick="location.href='{% url "list" todo_list.id %}';">
 </form>
+
+<a href="{% url 'todo_app:list' todo_list.id %}">
+    <button type="button">Cancel</button>
+</a>
 
 {% endblock %}
