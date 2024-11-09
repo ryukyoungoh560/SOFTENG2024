@@ -9,8 +9,9 @@
     <li>
         <div
             role="button"
-            onclick="location.href='{% url 'todo_app: list' todolist.id %}'">
+            <a href="{% url 'todo_app:list' todolist.id %}" role="button">
             {{ todolist.title }}
+            </a>
         </div>
     </li>
     {% empty %}
