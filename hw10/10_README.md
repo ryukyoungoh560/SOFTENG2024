@@ -1,4 +1,4 @@
-# hw09
+# hw10
 
 - single_pages로 구현했던 blog.html을 blog라는 폴더를 만들어서 구현
 

@@ -2,7 +2,6 @@
 
 {% block content %}
 
-
 <hr/>
 <h1>제목: {{post.title}}</a></h1>
 <h4>게시일: {{post.created_at}}</h4>
@@ -13,7 +12,7 @@
 <hr/>
 
 <div>
-    <a href="{% url 'blog:blog_list' %}"><i class="fas fa-home"></i>돌아가기</a>
+    <a href="{% url 'blog:post_list' %}"><i class="fas fa-home"></i>돌아가기</a>
   </div>
 
 {% endblock %}
