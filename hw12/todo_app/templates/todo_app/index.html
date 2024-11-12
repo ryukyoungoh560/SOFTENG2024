@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% if object_list %}
+<h3>All my lists</h3>
+{% endif %}
+    <ul>
+        {% for todolist in object_list %}
+        <li>
+            <a href="{% url 'todo_app:list' todolist.id %}" role="button">
+            {{ todolist.title }}
+            </a>
+        </li>
+        {% empty %}
+        <h4>You have no lists!</h4>
+        {% endfor %}
+    </ul>
+    <div>
+        <a href="{% url 'blog:post_list' %}"></i>돌아가기</a>
+      </div>
+
+   
+{% endblock %}
