@@ -1,0 +1,30 @@
+{% extends './layout.html' %}
+
+{% block content %}
+
+<h1><strong>Blog</strong></h1>
+<div>
+  <a href="{% url 'blog:index' %}"></i>인덱스</a>
+</div>
+<hr>
+<section>
+  {% for p in post_list %}
+  <div class="card mb-4">
+    {% if p.head_image %}
+      <img class="card-img-top" src="{{p.head_image.url}}" alt="{{p}} head image"
+      style="width: 400px; height: 400px;">
+    {% else %}
+      <img class="card-img-top" src="https://picsum.photos/seed/62/400/400" alt="random_image"> 
+    {% endif %}
+
+    <h2><a href="{{p.get_absolute_url}}">{{p.title}}</a></h2>
+    <h4>{{p.created_at}}</h4>
+    <p>{{p.content}}</p>
+  </div>
+  {% endfor %} 
+  
+
+  <hr>
+</section>
+{% endblock %}
+
