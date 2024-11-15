@@ -1,0 +1,28 @@
+{% extends './layout.html' %}
+
+{% block content %}
+
+{% if post.head_image %}
+      <img class="img-fluid rounded" src="{{post.head_image.url}}" alt="{{post.title}} head_image"
+      style="width: 400px; height: 400px;">
+    {% else %}
+      <img class="img-fluid rounded" src="https://picsum.photos/seed/62/400/400" alt="random_image"> 
+    {% endif %}
+
+
+
+
+<hr/>
+<h1>제목: {{post.title}}</a></h1>
+<h4>게시일: {{post.created_at}}</h4>
+<h4>최근 수정한 날짜: {{post.updated_at}}</h4>
+<p>내용: {{post.content}}</p>
+
+  
+<hr/>
+
+<div>
+    <a href="{% url 'blog:post_list' %}"><i class="fas fa-home"></i>돌아가기</a>
+  </div>
+
+{% endblock %}
