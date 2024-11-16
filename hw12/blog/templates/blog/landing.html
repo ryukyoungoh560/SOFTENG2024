@@ -3,18 +3,24 @@
 
 
 {% block main_content %}
-<div>
-    <i class="fas fa-clock"></i>
-    <button onclick="whatTimeIsIt()" class = "card2">현재시간</button>     
+
+<div class="card mb-6">
+    <div class="card-body">
+        <h3>Home</h3>
+        <hr>
+        <div>
+            <i class="fas fa-clock"></i>
+            <button onclick="whatTimeIsIt()" class = "card2">현재시간</button>     
+        </div>
+
+        <p class="card-text">아래 링크는 저의 github페이지입니다.</p>
+
+        <div>
+        <a class="btn btn-primary" href="https://github.com/ryukyoungoh560/SOFTENG2024">
+            <i class="fab fa-github"></i>
+            github으로 이동
+            </a>
+        </div>
+    </div>
 </div>
-
-<hr>
-
-<p>아래 링크는 저의 github페이지입니다.</p>
-
-<div>
-    <i class="fab fa-github"></i>
-    <a href="https://github.com/ryukyoungoh560/SOFTENG2024">github으로 이동</a>
-</div>
-
 {% endblock %}
