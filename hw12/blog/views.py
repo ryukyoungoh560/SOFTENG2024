@@ -9,10 +9,6 @@ def landing_page(request):
 def about_page(request):
     return render(request, 'blog/about_me.html', {'title':'About me'})
 
-#싱글페이지 꺼
-def index_page(request):
-    return render(request, 'blog/index.html', {'title':'index'})
-
 class PostList(ListView):
     model = Post
     ordering = '-pk'

@@ -8,5 +8,4 @@ urlpatterns = [
     path('blog/', views.PostList.as_view(), name= 'post_list'),
     path('about_me/', views.about_page, name="about_me"),
     path('', views.landing_page, name='landing_page'),
-    path('blog/index/', views.index_page, name="index")
 ]
