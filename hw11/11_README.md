@@ -8,5 +8,5 @@ onclick 을 써서 구현하려 했지만 오류를 고칠 수 없어서 기존�
 
 cursor - ai툴 좋은거
 cursor django prompt
-ai툴에게 역할을 줄 수 있음
+ai툴에게 역할을 줄 수 있음 클로드로 써봐야지
 chatgpt같은 거에 django 역할을 주고 질문하면 django기반으로 대답을 해줌
