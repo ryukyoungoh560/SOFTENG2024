@@ -1,0 +1,110 @@
+{% extends './layout.html' %}
+{% load static %}
+
+
+{% block content_head %}
+<header class="py-5 bg-light border-bottom mb-4">
+    <div class="container">
+        <div class="text-center my-5">
+            <h1 class="fw-bolder">Welcome to Blog Home!</h1>
+            <p class="lead mb-0">A Bootstrap 5 starter layout for your next blog homepage</p>
+        </div>
+    </div>
+</header>
+{% endblock %}
+
+{% block main_content %}        
+{% if post_list %}
+<!-- Featured blog post-->
+<div class="card mb-6">
+    {% if post_list.0.head_image %}
+        <img class="img-fluid rounded" src="{{post_list.0.head_image.url}}" alt="{{post.title}} head_image"
+        style="width: 800px; height: 350px;">
+    {% else %}
+        <img class="img-fluid rounded" src="https://picsum.photos/seed/62/850/350" alt="random_image"> 
+    {% endif %}
+    <div class="card-body">
+        <div class="small text-muted">{{post_list.0.created_at}}</div>
+        <h2 class="card-title">{{post_list.0.title}}</h2>
+        <p class="card-text">{{post_list.0.content}}</p>
+        <a class="btn btn-primary" href="{{post_list.0.get_absolute_url}}">Read more →</a>
+    </div>
+</div>
+{% endif %}
+<!-- Nested row for non-featured blog posts  --> 
+<div class="row d-flex flex-wrap">
+    <div class="col-lg-6">
+        {% for p in post_list|slice:"1:" %}
+        <!-- Blog post-->
+        <div class="card mb-4">
+            {% if p.head_image %}
+                <img class="card-img-top" src="{{p.head_image.url}}" alt="{{p}} head image"
+                style="width: 100%; height: 200px; object-fit: cover;">
+            {% else %}
+                <img class="card-img-top" src="https://picsum.photos/seed/62/200/100" alt="random_image"
+                style="width: 100%; height: 200px; object-fit: cover;"> 
+            {% endif %}
+            <div class="card-body" style="height: 200px;" >
+                <div class="small text-muted">{{p.created_at}}</div>
+                <h2 class="card-title h4">{{p.title}}</h2>
+                <p class="card-text">{{p.content}}</p>
+                <a class="btn btn-primary" href="{{p.get_absolute_url}}">Read more →</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="col-lg-6">
+        <!-- Blog post-->
+        <div class="card mb-4">
+            <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." 
+                style="width: 100%; height: 200px; object-fit: cover;"/></a>
+            <div class="card-body" style="height: 200px;">
+                <div class="small text-muted">January 1, 2023</div>
+                <h2 class="card-title h4">Post Title</h2>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.</p>
+                <a class="btn btn-primary" href="#!">Read more →</a>
+            </div>
+        </div> 
+        <!-- Blog post-->
+        <div class="card mb-4">
+            <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." 
+                style="width: 100%; height: 200px; object-fit: cover;"/></a>
+            <div class="card-body" style="height: 200px;">
+                <div class="small text-muted">January 1, 2023</div>
+                <h2 class="card-title h4">Post Title</h2>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.</p>
+                <a class="btn btn-primary" href="#!">Read more →</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav aria-label="Pagination">
+    <hr class="my-0" />
+    <ul class="pagination justify-content-center my-4">
+        <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">Newer</a></li>
+        <li class="page-item active" aria-current="page"><a class="page-link" href="#!">1</a></li>
+        <li class="page-item"><a class="page-link" href="#!">2</a></li>
+        <li class="page-item"><a class="page-link" href="#!">3</a></li>
+        <li class="page-item disabled"><a class="page-link" href="#!">...</a></li>
+        <li class="page-item"><a class="page-link" href="#!">15</a></li>
+        <li class="page-item"><a class="page-link" href="#!">Older</a></li>
+    </ul>
+</nav>
+
+<style>
+    .row.d-flex {
+        display: flex;
+        flex-wrap: wrap; 
+    }
+    .col-lg-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+        width: 50%;
+        padding: 15px;
+    }
+    
+</style>
+
+{% endblock %}
