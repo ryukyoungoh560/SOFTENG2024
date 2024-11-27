@@ -27,15 +27,23 @@
     {% endif %}
     <div class="card-body">
         <div class="small text-muted">Posted on {{post_list.0.created_at}} by
-            <a href=”#”>{{ p.author | upper }}</a>
+            <a href="#">{{ p.author | upper }}</a>
         </div>
-        {% if p.category %}
-            <span class="badge badge-secondary float-right">{{ p.category }}</span>
+        {% if post_list.0.category %}
+        <span class="badge text-bg-secondary float-end">{{ post_list.0.category }}</span>
         {% else %}
-            <span class="badge badge-secondary float-right">미분류</span>
+        <span class="badge text-bg-secondary float-end">미분류</span>
         {% endif %}
         <h2 class="card-title">{{post_list.0.title}}</h2>
         <p class="card-text">{{post_list.0.content}}</p>
+        {% if post_list.0.tags.exists %}
+            <i class = "fas fa-tags"></i>
+            {% for tag in post_list.0.tags.iterator %}
+                <a href="{% url 'blog:tag_page' tag.slug %}"><span class="badge rounded-pill bg-light text-dark">{{tag}}</span></a>
+            {% endfor %}
+            <br/>
+            <br/>
+        {% endif %}
         <a class="btn btn-primary" href="{{post_list.0.get_absolute_url}}">Read more →</a>
     </div>
 </div>
@@ -55,15 +63,23 @@
             {% endif %}
             <div class="card-body" style="height: 200px;" >
                 <div class="small text-muted">Posted on {{p.created_at}} by
-                    <a href=”#”>{{ p.author | upper }}</a>
+                    <a href="#">{{ p.author | upper }}</a>
                 </div>
                 {% if p.category %}
-                    <span class="badge badge-secondary float-right">{{ p.category }}</span>
+                <span class="badge text-bg-secondary float-end">{{ p.category }}</span>
                 {% else %}
-                    <span class="badge badge-secondary float-right">미분류</span>
+                <span class="badge text-bg-secondary float-end">미분류</span>
                 {% endif %}
                 <h2 class="card-title h4">{{p.title}}</h2>
                 <p class="card-text">{{p.content}}</p>
+                {% if p.tags.exists %}
+                    <i class = "fas fa-tags"></i>
+                    {% for tag in p.tags.iterator %}
+                    <a href="{% url 'blog:tag_page' tag.slug %}"><span class="badge rounded-pill bg-light text-dark">{{tag}}</span></a>
+                    {% endfor %}
+                    <br/>
+                    <br/>
+                {% endif %}
                 <a class="btn btn-primary" href="{{p.get_absolute_url}}">Read more →</a>
             </div>
         </div>

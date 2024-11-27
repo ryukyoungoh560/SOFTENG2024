@@ -9,17 +9,29 @@
     <!-- Post header-->
     <header class="mb-4">
         <!-- Post title-->
-        <h1 class="fw-bolder mb-1">{{post.title}}</h1>
+        <h1 class="fw-bolder mb-1">{{post.title}}
+            {% if post.tags.exists %}
+                <span class="badge bg-light text-dark">
+                    <i class="fas fa-tags"></i> 
+                    {% for tag in post.tags.all %}
+                        <a href="{% url 'blog:tag_page' tag.slug %}" class="text-dark">
+                            <span class="badge rounded-pill bg-light text-dark">{{ tag }}</span>
+                        </a>
+                    {% endfor %}
+                </span>
+            {% endif %}
+        </h1>
         <!-- Post meta content-->
         <div class="text-muted fst-italic mb-2">{{post.created_at}} Posted by 
-            <a href=”#”>{{ post.author | upper }}</a>
+            <a href="#">{{ post.author | upper }}</a>
         </div>
         <!-- Post categories -->
         {% if post.category %}
-        <span class="badge badge-secondary float-right">{{ post.category }}</span>
+        <span class="badge text-bg-secondary float-end">{{ post.category }}</span>
         {% else %}
-        <span class="badge badge-secondary float-right">미분류</span>
+        <span class="badge text-bg-secondary float-end">미분류</span>
         {% endif %} 
+        
 
         
         
@@ -33,6 +45,14 @@
     <!-- Post content-->
     <section class="mb-5">
         <p class="fs-5 mb-4">{{post.content}}</p>
+        {% if post.tags.exists %}
+                    <i class = "fas fa-tags"></i>
+                    {% for tag in post.tags.iterator %}
+                    <a href="{% url 'blog:tag_page' tag.slug %}"><span class="badge rounded-pill bg-light text-dark">{{tag}}</span></a>
+                    {% endfor %}
+                    <br/>
+                    <br/>
+                {% endif %}
     
     </section>
 </article>
